@@ -4,7 +4,12 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Cześć</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-left">
+    <h1 class="display-4">Cześć @Model.Name</h1>
+    <form method="post" class="form-inline">
+        <label asp-for="FizzBuzz.Number" class="sr-only"></label>            
+        <input asp-for="FizzBuzz.Number" class="form-control mr-sm-2" name="Number">
+        <button class="btn btn-primary my-1" type="submit">Zatwierdź</button><br><br>
+        <span asp-validation-for="FizzBuzz.Number" class="text-danger"></span>
+    </form>
 </div>
